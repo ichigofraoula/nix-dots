@@ -16,6 +16,12 @@
 
   systemd.services.ModemManager.enable = false;
   systemd.services.bolt.enable = false;
+  
+  # Enable nix flakes
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
 

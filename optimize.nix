@@ -14,6 +14,20 @@
   services.tlp = {
     enable = true;
     settings = {
+      
+      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "power";
+
+      #tlp always run battery mode so the laptop wont get hot
+      TLP_DEFAULT_MODE = "BAT";
+      TLP_PERSISTENT_DEFAULT = 1;
+
+       #Optional helps save long term battery health
+       START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
 
@@ -45,12 +59,6 @@
      libvdpau-va-gl
     ];
   };
-
-  # Enable nix flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   #Replaces nixos-rebuild completely
   system.rebuild.enableNg = true;
