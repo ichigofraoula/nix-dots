@@ -21,13 +21,21 @@
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
       CPU_ENERGY_PERF_POLICY_ON_AC = "power";
 
+      RUNTIME_PM_ON_BAT = "auto";
+      RUNTIME_PM_ON_AC = "auto";
+
+      INTEL_GPU_NEEDS_ROOT = 1;
+      INTEL_GPU_FREQ_ON_BAT = "auto";
+      INTEL_GPU_FREQ_ON_AC = "auto";
+
+
       #tlp always run battery mode so the laptop wont get hot
       TLP_DEFAULT_MODE = "BAT";
       TLP_PERSISTENT_DEFAULT = 1;
 
-       #Optional helps save long term battery health
-       START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
-       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
 
