@@ -27,7 +27,6 @@
       rmpc
       fzf
       fastfetch
-      yazi
    
       powertop
    

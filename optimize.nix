@@ -3,7 +3,7 @@
 {
   #Zram
   zramSwap.enable = true;
-  zramSwap.memoryPercent = 120;
+  zramSwap.memoryPercent = 140;
 
   #increase battery life i think
   services = {
@@ -15,18 +15,18 @@
     enable = true;
     settings = {
       
-      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
+      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
 
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "powersave";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "power";
 
       RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_ON_AC = "auto";
 
       INTEL_GPU_NEEDS_ROOT = 1;
       INTEL_GPU_FREQ_ON_BAT = "low";
-      INTEL_GPU_FREQ_ON_AC = "low";
+      INTEL_GPU_FREQ_ON_AC = "medium";
 
 
       #tlp always run battery mode so the laptop wont get hot
