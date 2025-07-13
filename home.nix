@@ -8,7 +8,7 @@
   home.stateVersion = "25.05";
 
   home.packages = [
-    pkgs.hello
+    pkgs.ladybird
   ];
 
   home.file = {

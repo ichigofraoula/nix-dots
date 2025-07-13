@@ -15,6 +15,8 @@
      programs.neovim.enable = true;
      programs.neovim.defaultEditor = true;
 
+     programs.yazi.enable = true;
+
      environment.systemPackages = with pkgs; [
       wget
       vim
