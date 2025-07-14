@@ -22,8 +22,6 @@
     set -g @plugin 'tmux-plugins/tpm'
     set -g @plugin 'tmux-plugins/tmux-sensible'
     set -g @plugin 'tmux-plugins/tmux-yank'
-    #set -g @plugin 'tmux-plugins/tmux-resurrect'
-    #set -g @plugin 'tmux-plugins/tmux-continuum'
     set -g @plugin 'christoomey/vim-tmux-navigator'
     set -g @vim_navigator_mapping_left "C-Left C-h"  # use C-h and C-Left
     set -g @vim_navigator_mapping_right "C-Right C-l"
@@ -33,7 +31,6 @@
     set -g @plugin 'fcsonline/tmux-thumbs'
     set -g @plugin 'sainnhe/tmux-fzf'
     set -g @plugin 'wfxr/tmux-fzf-url'
-    set -g @plugin ''
     set -g @plugin 'omerxx/catppuccin-tmux' # My fork that holds the meetings script bc I'm lazy af
     set -g @plugin 'omerxx/tmux-sessionx'
     set -g @plugin 'omerxx/tmux-floax'
@@ -55,7 +52,7 @@
     set -g @continuum-restore 'on'
     set -g @resurrect-strategy-nvim 'session'
     set -g @catppuccin_window_left_separator ""
-    set -g @catppuccin_window_right_separator " "
+    set -g @catppuccin_window_right_separator " "
     set -g @catppuccin_window_middle_separator " █"
     set -g @catppuccin_window_number_position "right"
     set -g @catppuccin_window_default_fill "number"
@@ -74,6 +71,6 @@
     set -g @catppuccin_date_time_text "%H:%M"
     
     run '~/.tmux/plugins/tpm/tpm'
-   '';
+    '';
   };
 }
