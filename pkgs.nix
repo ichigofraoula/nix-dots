@@ -22,17 +22,19 @@
       vim
       git
       lazygit
-      tmux
       eza
       rmpc
       fzf
+      btop
       fastfetch
+      gcc
    
       powertop
-   
+
       audacity
       zed-editor
       obsidian
+      kitty
       ghostty
       youtube-music
    

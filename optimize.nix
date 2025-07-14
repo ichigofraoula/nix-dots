@@ -38,7 +38,7 @@
       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
-
+  
   #starts at boot
   systemd.services.powertop-autotune = {
     description = "Powertop auto-tune";

@@ -5,6 +5,7 @@
     [ 
       ./hardware-configuration.nix
       ./kanata.nix
+      ./tmux.nix
       ./pkgs.nix
       ./optimize.nix
     ];
@@ -14,8 +15,10 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.colord.enable = false; #disable if you don’t need color profile management (usually GNOME-related)
+  services.avahi.enable = false; #used for network discovery (e.g. printers, local hostname resolution)
   systemd.services.ModemManager.enable = false;
-  systemd.services.bolt.enable = false;
+  services.hardware.bolt.enable = false;
   
   # Enable nix flakes
   nix.settings.experimental-features = [
@@ -58,6 +61,7 @@
     gnome.core-apps.enable = false;
     geoclue2.enable = false;
   };
+
 
   environment.gnome.excludePackages = with pkgs.gnome; [
    pkgs.gnome-tour
