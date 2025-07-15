@@ -5,7 +5,6 @@
     [ 
       ./hardware-configuration.nix
       ./kanata.nix
-      ./tmux.nix
       ./pkgs.nix
       ./optimize.nix
     ];
@@ -79,6 +78,9 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
 
+  #enable camera
+  hardware.facetimehd.enable = true;
+  
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

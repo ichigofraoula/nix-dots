@@ -21,12 +21,25 @@
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
       CPU_ENERGY_PERF_POLICY_ON_AC = "power";
 
+      DISK_DEVICES = "sda"; # remove nvme0n1
+
+      USB_EXCLUDE_AUDIO = 1; # Prevent crackling audio
+      RADEON_POWER_PROFILE_ON_AC = ""; # You can remove deprecated Radeon options
+
+      SOUND_POWER_SAVE_ON_BAT = 1;
+      SOUND_POWER_SAVE_CONTROLLER = "Y";
+
+
       RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_ON_AC = "auto";
 
-      INTEL_GPU_NEEDS_ROOT = 1;
-      INTEL_GPU_FREQ_ON_BAT = "low";
-      INTEL_GPU_FREQ_ON_AC = "medium";
+      INTEL_GPU_MIN_FREQ_ON_BAT=300;
+      INTEL_GPU_MAX_FREQ_ON_BAT=400;
+      INTEL_GPU_BOOST_FREQ_ON_BAT=400;
+
+      INTEL_GPU_MIN_FREQ_ON_AC=300;
+      INTEL_GPU_MAX_FREQ_ON_AC=600;
+      INTEL_GPU_BOOST_FREQ_ON_AC=600;
 
 
       #tlp always run battery mode so the laptop wont get hot
@@ -62,8 +75,6 @@
     enable = true;
     extraPackages = with pkgs; [
      intel-media-driver
-     vaapiIntel
-     vaapiVdpau
      libvdpau-va-gl
     ];
   };
