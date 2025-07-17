@@ -13,16 +13,12 @@
      programs.starship.enable = true;
      programs.zoxide.enable = true;
    
-     #make neovim the default
-     programs.neovim.enable = true;
-     programs.neovim.defaultEditor = true;
-
      programs.yazi.enable = true;
 
      environment.systemPackages = with pkgs; [
       wget
-      vim
       git
+      neovim
       lazygit
       eza
       fzf
