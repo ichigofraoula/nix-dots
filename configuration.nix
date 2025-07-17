@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./pkgs.nix
       ./config/kanata.nix
+      ./config/fastfetch.nix
       ./optimize.nix
     ];
 
