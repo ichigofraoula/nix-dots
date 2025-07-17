@@ -4,32 +4,28 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./kanata.nix
       ./pkgs.nix
+      ./config/kanata.nix
       ./optimize.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  services.colord.enable = false; #disable if you don’t need color profile management (usually GNOME-related)
-  services.avahi.enable = false; #used for network discovery (e.g. printers, local hostname resolution)
-  systemd.services.ModemManager.enable = false;
-  services.hardware.bolt.enable = false;
   
-  # Enable nix flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.enable=true;
+  networking.firewall.enable = true;
+
+  #enable bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -53,19 +49,14 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services = {
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
-    gnome.core-apps.enable = false;
-    geoclue2.enable = false;
-  };
-
-
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.core-apps.enable = false;
   environment.gnome.excludePackages = with pkgs.gnome; [
    pkgs.gnome-tour
   ];
-  
+
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -74,13 +65,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
-  
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
 
-  #enable camera
-  hardware.facetimehd.enable = true;
-  
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -89,20 +74,44 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-};
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.strize = {
     isNormalUser = true;
     description = "strize";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+    #  thunderbird
     ];
   };
 
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
-  # It‘s perfectly fine and recommended to leave as it is
-  system.stateVersion = "25.05"; 
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }

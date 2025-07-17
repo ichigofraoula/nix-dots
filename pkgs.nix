@@ -1,6 +1,8 @@
  {config, pkgs, ... }: 
  
  {
+     programs.firefox.enable = true;
+
      #Make fish the default shell
      programs.fish.enable = true;
      users.defaultUserShell = pkgs.fish;
@@ -23,8 +25,8 @@
       git
       lazygit
       eza
-      rmpc
       fzf
+      bat
       btop
       fastfetch
       gcc
