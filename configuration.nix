@@ -3,11 +3,10 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
-      ./pkgs.nix
+      ./hardware/hardware-configuration.nix
+      ./hardware/optimize.nix
+      ./config/pkgs.nix
       ./config/kanata.nix
-      ./config/fastfetch.nix
-      ./optimize.nix
     ];
 
   # Bootloader.
