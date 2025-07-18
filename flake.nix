@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -15,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -23,15 +25,21 @@
       nixosConfigurations = {
         strize = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
+          modules = [ 
+            ./configuration.nix 
+            nixos-hardware.nixosModules.apple-macbook-air-7
+          ];
         };
       };
 
       homeConfigurations = {
         strize-home = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home.nix ];
-	  extraSpecialArgs = { inherit inputs; };
+          modules = [ 
+            ./home.nix
+            ./home/fastfetch.nix
+          ];
+          extraSpecialArgs = { inherit inputs; };
         };
       };
     };

@@ -5,14 +5,11 @@
     [ 
       ./hardware/hardware-configuration.nix
       ./hardware/optimize.nix
+      ./config/DE.nix
       ./config/pkgs.nix
       ./config/kanata.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -20,6 +17,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+
+  #to run localsend
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-57-6.12.38"
+  ];
 
   #enable bluetooth
   hardware.bluetooth = {
@@ -43,24 +45,6 @@
     LC_PAPER = "en_IN";
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.gnome.core-apps.enable = false;
-  environment.gnome.excludePackages = with pkgs.gnome; [
-   pkgs.gnome-tour
-  ];
-
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "colemak";
   };
 
   # Enable CUPS to print documents.

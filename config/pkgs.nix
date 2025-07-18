@@ -35,6 +35,9 @@
       kitty
       ghostty
       youtube-music
+
+      glance
+      localsend
    
       gnome-tweaks
       evince

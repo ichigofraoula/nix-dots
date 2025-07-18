@@ -8,14 +8,13 @@
   home.stateVersion = "25.05";
 
   home.packages = [
-    pkgs.ladybird
   ];
 
   home.file = {
   };
 
   imports = [
-   #inputs.zen-browser.homeModules.beta
+   inputs.zen-browser.homeModules.beta
    #inputs.zen-browser.homeModules.twilight
    #inputs.zen-browser.homeModules.twilight-official
   ];
