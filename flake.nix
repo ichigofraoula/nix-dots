@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -27,7 +27,7 @@
           inherit system;
           modules = [ 
             ./configuration.nix 
-            nixos-hardware.nixosModules.apple-macbook-air-7
+            #nixos-hardware.nixosModules.apple-macbook-air-7
           ];
         };
       };
@@ -38,6 +38,7 @@
           modules = [ 
             ./home.nix
             ./home/fastfetch.nix
+            ./home/tmux.nix
           ];
           extraSpecialArgs = { inherit inputs; };
         };
