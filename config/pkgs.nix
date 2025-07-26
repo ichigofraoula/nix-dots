@@ -36,6 +36,9 @@
       ghostty
       youtube-music
 
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+
       glance
       localsend
    

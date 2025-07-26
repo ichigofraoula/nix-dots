@@ -7,7 +7,7 @@
   # You should not change this value 
   home.stateVersion = "25.05";
 
-  home.packages = [
+  home.packages = with pkgs; [
   ];
 
   home.file = {

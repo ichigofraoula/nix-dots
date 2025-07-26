@@ -6,28 +6,20 @@
       ./hardware/hardware-configuration.nix
       ./hardware/optimize.nix
       ./config/DE.nix
+      ./config/services.nix
       ./config/pkgs.nix
       ./config/kanata.nix
     ];
 
+  #enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
 
   #to run localsend
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.38"
   ];
-
-  #enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -46,25 +38,6 @@
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = false;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.strize = {
     isNormalUser = true;

@@ -2,7 +2,8 @@
   programs.tmux = {
     enable = true;
     extraConfig = ''
-    set-option -g default-terminal 'screen-256color'
+    set-option -g default-terminal 'tmux-256color'
+    set -as terminal-overrides ',tmux-256color:RGB'
     set-option -g terminal-overrides ',xterm-256color:RGB'
     
     set -g mouse on
@@ -71,6 +72,8 @@
     set -g @catppuccin_directory_text "#{b:pane_current_path}"
     set -g @catppuccin_meetings_text "#($HOME/.config/tmux/scripts/cal.sh)"
     set -g @catppuccin_date_time_text "%H:%M"
+    
+    run '~/.tmux/plugins/tpm/tpm'
    '';
   };
 }
