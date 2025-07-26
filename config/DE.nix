@@ -20,14 +20,14 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true; #GTK app compatability
-    excludePackages = with pkgs; [
+    extraPackages = with pkgs; [
       swaylock #Lockscreen
       swayidle #idle management
       wl-clipboard #clipboard
       mako # notification
       grim #SS tool
       slurp # region selection for SS
-      rofi #app launcher
+      wofi #app launcher
       foot #lightweight terminal
     ];
   };
