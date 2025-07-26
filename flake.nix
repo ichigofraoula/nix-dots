@@ -22,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, niri, home-manager, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -33,10 +33,6 @@
           modules = [ 
             ./configuration.nix 
             ./config/niri.nix
-            {
-              inputs = inputs;
-              username = "strize";
-            }
             #nixos-hardware.nixosModules.apple-macbook-air-7
           ];
         };
