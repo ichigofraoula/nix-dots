@@ -15,6 +15,8 @@
    
      programs.yazi.enable = true;
 
+     programs.gpu-screen-recorder.enable = true;
+
      environment.systemPackages = with pkgs; [
       wget
       git
@@ -28,6 +30,7 @@
       gcc
    
       powertop
+      gpu-screen-recorder
 
       audacity
       zed-editor

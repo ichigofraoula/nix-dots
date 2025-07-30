@@ -32,7 +32,6 @@
           inherit system;
           modules = [ 
             ./configuration.nix 
-            ./config/niri.nix
             #nixos-hardware.nixosModules.apple-macbook-air-7
           ];
         };
