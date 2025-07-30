@@ -42,8 +42,7 @@
           inherit pkgs;
           modules = [ 
             ./home.nix
-            ./home/fastfetch.nix
-            ./home/tmux.nix
+            ./home
           ];
           extraSpecialArgs = { inherit inputs; };
         };
