@@ -79,7 +79,7 @@ in {
       gestures = {hot-corners.enable = true;};
       cursor = {
         size = 20;
-        theme = "${pointer.name}";
+        theme = "default";
       };
       layout = {
         focus-ring.enable = false;
