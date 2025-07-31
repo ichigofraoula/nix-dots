@@ -5,10 +5,7 @@
     [ 
       ./hardware/hardware-configuration.nix
       ./hardware/optimize.nix
-      ./config/DE.nix
-      ./config/services.nix
-      ./config/pkgs.nix
-      ./config/kanata.nix
+      ./config
     ];
 
   #enable flakes

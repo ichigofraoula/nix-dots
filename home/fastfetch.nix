@@ -12,8 +12,8 @@
             outputColor = "red";
         }
         {
-            type = "title";
-            key = " PC";
+            type = "host";
+            key = " ";
             keyColor = "green";
         }
         {
