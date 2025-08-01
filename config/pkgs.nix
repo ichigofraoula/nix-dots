@@ -38,6 +38,7 @@
       kitty
       ghostty
       youtube-music
+      google-chrome
 
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
