@@ -1,6 +1,7 @@
 {
   imports = [
-    ./DE.nix
+    ./bootloader
+    ./DEs
     ./kanata.nix
     ./pkgs.nix
     ./services.nix

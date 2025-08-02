@@ -14,7 +14,7 @@
   services.tlp = {
     enable = true;
     settings = {
-      
+
       CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
       CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
 
@@ -48,7 +48,7 @@
       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
-  
+
   #starts at boot
   systemd.services.powertop-autotune = {
     description = "Powertop auto-tune";
@@ -58,12 +58,12 @@
     };
   };
 
-  #run every 30min to save battery
+  #run every 15min to save battery
   systemd.timers.powertop-autotune = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5min";
-      OnUnitActiveSec = "30min";
+      OnUnitActiveSec = "15min";
       Unit = "powertop-autotune.service";
     };
   };

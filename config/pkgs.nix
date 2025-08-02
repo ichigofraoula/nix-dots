@@ -35,7 +35,6 @@
       audacity
       zed-editor
       obsidian
-      kitty
       ghostty
       youtube-music
       google-chrome
@@ -52,7 +51,6 @@
       file-roller
       stacer
    
-      kooha
       mpv
       celluloid
     ];

@@ -1,16 +1,11 @@
 {config, pkgs, ... }:
 
 {
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services = { 
+  services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     gnome.core-apps.enable = false;
@@ -23,6 +18,6 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "colemak";
+    variant = "qwerty";
   };
 }
