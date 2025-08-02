@@ -3,8 +3,7 @@
 {
   imports =
     [ 
-      ./hardware/hardware-configuration.nix
-      ./hardware/optimize.nix
+      ./hardware
       ./config
     ];
 
