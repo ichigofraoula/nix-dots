@@ -37,7 +37,6 @@
       obsidian
       ghostty
       youtube-music
-      google-chrome
 
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
@@ -53,5 +52,8 @@
    
       mpv
       celluloid
+
+      google-chrome
+      tor-browser
     ];
  }
