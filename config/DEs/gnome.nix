@@ -1,4 +1,4 @@
-{config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -11,7 +11,7 @@
     gnome.core-apps.enable = false;
   };
 
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = [
    pkgs.gnome-tour
   ];
 

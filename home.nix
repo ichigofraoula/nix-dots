@@ -8,7 +8,12 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
+    krita
+    youtube-music
+    google-chrome
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.file = {
   };

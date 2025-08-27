@@ -1,4 +1,4 @@
- {config, pkgs, ... }: 
+ { pkgs, ... }: 
  
  {
      programs.firefox.enable = true;
@@ -29,31 +29,28 @@
       fastfetch
       gcc
    
-      powertop
+      powertop #battery
       gpu-screen-recorder
 
       audacity
       zed-editor
       obsidian
+      localsend
       ghostty
-      youtube-music
 
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
-
-      glance
-      localsend
    
       gnome-tweaks
-      evince
-      nemo
-      file-roller
+      evince #document viewer
+      nemo-with-extensions #file viewer
+      nautilus # gnome default file manager
+      file-roller #unzip
       stacer
    
       mpv
       celluloid
 
-      google-chrome
       tor-browser
     ];
  }
