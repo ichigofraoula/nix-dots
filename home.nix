@@ -11,6 +11,7 @@
     krita
     youtube-music
     google-chrome
+    libresprite
   ];
 
   nixpkgs.config.allowUnfree = true;
