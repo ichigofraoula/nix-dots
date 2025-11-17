@@ -75,17 +75,4 @@
      libvdpau-va-gl
     ];
   };
-
-  #Replaces nixos-rebuild completely
-  system.rebuild.enableNg = true;
-
-  #optimize for garbage collection in nix
-  nix.settings.auto-optimise-store = true;
-
-  # Purge unused nix store entries
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 4d";
-  };
 }

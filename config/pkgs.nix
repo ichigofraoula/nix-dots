@@ -32,7 +32,6 @@
       powertop #battery
       gpu-screen-recorder
 
-      audacity
       zed-editor
       obsidian
       localsend

@@ -8,10 +8,10 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
+    audacity
     krita
     youtube-music
     google-chrome
-    libresprite
   ];
 
   nixpkgs.config.allowUnfree = true;

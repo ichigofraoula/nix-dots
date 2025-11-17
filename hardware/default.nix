@@ -1,6 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./optimize.nix
+    ./bat-optimize.nix
+    ./storage-optimize.nix
   ];
 }
