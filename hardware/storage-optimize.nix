@@ -19,11 +19,7 @@
   nix.settings = {
     auto-optimise-store = true;
     log-lines = 0;
-    store-size-soft-limit = "15G";
   };
-
-  #optimize for garbage collection in nix
-  nix.settings.auto-optimise-store = true;
 
   #Replaces nixos-rebuild completely
   system.rebuild.enableNg = true;

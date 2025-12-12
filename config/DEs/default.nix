@@ -1,5 +1,6 @@
 {
   imports = [
+   #./WM
     ./gnome.nix
   ];
 }

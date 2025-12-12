@@ -3,13 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    
-    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -22,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, niri, home-manager, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};

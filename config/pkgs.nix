@@ -45,8 +45,8 @@
       nemo-with-extensions #file viewer
       nautilus # gnome default file manager
       file-roller #unzip
-      stacer
-   
+      loupe
+
       mpv
       celluloid
 
