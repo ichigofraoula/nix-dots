@@ -1,7 +1,7 @@
  { pkgs, ... }: 
  
  {
-     programs.firefox.enable = true;
+     programs.firefox.enable = false;
 
      #Make fish the default shell
      programs.fish.enable = true;
@@ -13,8 +13,6 @@
      programs.starship.enable = true;
      programs.zoxide.enable = true;
    
-     programs.yazi.enable = true;
-
      programs.gpu-screen-recorder.enable = true;
 
      environment.systemPackages = with pkgs; [
@@ -28,6 +26,7 @@
       btop
       fastfetch
       gcc
+      nil
    
       powertop #battery
       gpu-screen-recorder

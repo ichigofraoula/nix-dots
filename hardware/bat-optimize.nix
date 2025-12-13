@@ -2,14 +2,18 @@
 
 {
   #Zram
-  zramSwap.enable = true;
-  zramSwap.memoryPercent = 140;
+  zramSwap = {
+   enable = true;
+   priority = 100;
+   algorithm = "lz4";
+   memoryPercent = 50;
+  };
 
   #increase battery life i think
   services = {
-     power-profiles-daemon.enable = false;
-     thermald.enable = true;
-     };
+   power-profiles-daemon.enable = false;
+   thermald.enable = true;
+  };
 
   services.tlp = {
     enable = true;
