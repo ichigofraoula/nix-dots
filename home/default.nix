@@ -2,5 +2,6 @@
   imports = [
     ./fastfetch.nix
     ./tmux.nix
+    ./fuzzel.nix
   ];
 }
