@@ -17,15 +17,15 @@
     krita
     youtube-music
     google-chrome
-    pkgs.writeShellApplication
-    {
-      name = "ns";
-      runtimeInputs = with pkgs; [
-        fzf
-        nix-search-tv
-      ];
-      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-    }
+   #(pkgs.writeshellapplication
+   #{
+   #  name = "ns";
+   #  runtimeinputs = with pkgs; [
+   #    fzf
+   #    nix-search-tv
+   #  ];
+   #  text = builtins.readfile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
+   #})
   ];
 
   nixpkgs.config.allowUnfree = true;

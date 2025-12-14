@@ -12,6 +12,7 @@
    
      programs.starship.enable = true;
      programs.zoxide.enable = true;
+     programs.yazi.enable = true;
    
      programs.gpu-screen-recorder.enable = true;
 
