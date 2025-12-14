@@ -1,10 +1,15 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.username = "strize";
   home.homeDirectory = "/home/strize";
 
-  # You should not change this value 
+  # You should not change this value
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
@@ -12,14 +17,15 @@
     krita
     youtube-music
     google-chrome
-    (pkgs.writeShellApplication {
+    pkgs.writeShellApplication
+    {
       name = "ns";
       runtimeInputs = with pkgs; [
         fzf
         nix-search-tv
       ];
       text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-    })
+    }
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -28,9 +34,9 @@
   };
 
   imports = [
-   inputs.zen-browser.homeModules.beta
-   #inputs.zen-browser.homeModules.twilight
-   #inputs.zen-browser.homeModules.twilight-official
+    inputs.zen-browser.homeModules.beta
+    #inputs.zen-browser.homeModules.twilight
+    #inputs.zen-browser.homeModules.twilight-official
   ];
 
   programs.zen-browser.enable = true;

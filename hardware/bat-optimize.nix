@@ -3,16 +3,16 @@
 {
   #Zram
   zramSwap = {
-   enable = true;
-   priority = 100;
-   algorithm = "lz4";
-   memoryPercent = 50;
+    enable = true;
+    priority = 100;
+    algorithm = "lz4";
+    memoryPercent = 50;
   };
 
   #increase battery life i think
   services = {
-   power-profiles-daemon.enable = false;
-   thermald.enable = true;
+    power-profiles-daemon.enable = false;
+    thermald.enable = true;
   };
 
   services.tlp = {
@@ -34,14 +34,13 @@
       RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_ON_AC = "auto";
 
-      INTEL_GPU_MIN_FREQ_ON_BAT=300;
-      INTEL_GPU_MAX_FREQ_ON_BAT=400;
-      INTEL_GPU_BOOST_FREQ_ON_BAT=400;
+      INTEL_GPU_MIN_FREQ_ON_BAT = 300;
+      INTEL_GPU_MAX_FREQ_ON_BAT = 400;
+      INTEL_GPU_BOOST_FREQ_ON_BAT = 400;
 
-      INTEL_GPU_MIN_FREQ_ON_AC=300;
-      INTEL_GPU_MAX_FREQ_ON_AC=600;
-      INTEL_GPU_BOOST_FREQ_ON_AC=600;
-
+      INTEL_GPU_MIN_FREQ_ON_AC = 300;
+      INTEL_GPU_MAX_FREQ_ON_AC = 600;
+      INTEL_GPU_BOOST_FREQ_ON_AC = 600;
 
       #tlp always run battery mode so the laptop wont get hot
       TLP_DEFAULT_MODE = "BAT";
@@ -75,8 +74,8 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-     intel-media-driver
-     libvdpau-va-gl
+      intel-media-driver
+      libvdpau-va-gl
     ];
   };
 }
