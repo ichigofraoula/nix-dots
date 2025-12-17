@@ -5,8 +5,8 @@
   zramSwap = {
     enable = true;
     priority = 100;
-    algorithm = "lz4";
-    memoryPercent = 50;
+    algorithm = "zstd";
+    memoryPercent = 75;
   };
 
   #increase battery life i think
