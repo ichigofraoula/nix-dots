@@ -28,6 +28,7 @@
     fastfetch
     gcc
     nil
+    nh
     nix-search-tv
 
     powertop # battery
@@ -46,7 +47,8 @@
     nemo-with-extensions # file viewer
     nautilus # gnome default file manager
     file-roller # unzip
-    loupe
+    Baobab # analyse disk usage in gnome env
+    loupe # image viewer
 
     mpv
     celluloid

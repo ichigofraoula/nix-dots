@@ -20,8 +20,4 @@
     auto-optimise-store = true;
     log-lines = 0;
   };
-
-  #Replaces nixos-rebuild completely
-  system.rebuild.enableNg = true;
-
 }

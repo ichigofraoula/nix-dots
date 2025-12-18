@@ -15,17 +15,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-hardware,
+      home-manager,
+      zen-browser,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       nixosConfigurations = {
         strize = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ 
-            ./configuration.nix 
-            #nixos-hardware.nixosModules.apple-macbook-air-7
+          modules = [
+            ./configuration.nix
           ];
         };
       };
@@ -33,7 +41,7 @@
       homeConfigurations = {
         strize-home = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ 
+          modules = [
             ./home.nix
             ./home
           ];
@@ -42,4 +50,3 @@
       };
     };
 }
-

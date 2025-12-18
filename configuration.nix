@@ -1,20 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware
-      ./config
-    ];
+  imports = [
+    ./hardware
+    ./config
+  ];
 
   #enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
 
   #to run localsend
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.61"
+    "broadcom-sta-6.30.223.271-59-6.12.62"
   ];
 
   # Set your time zone.
@@ -38,12 +40,14 @@
   users.users.strize = {
     isNormalUser = true;
     description = "strize";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
